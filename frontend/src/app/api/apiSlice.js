@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { logOut, setCredentials } from "../../features/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl:   import.meta.env.MODE === "development"
+  baseUrl:
+    import.meta.env.MODE === "development"
       ? "http://localhost:3000"
       : "https://ecommerce-1-eumb.onrender.com",
   credentials: "include",
@@ -46,7 +47,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
   return result;
 };
 
-export const apiSlice  = createApi({
-    baseQuery: baseQueryWithReauth,
+export const apiSlice = createApi({
+  baseQuery: baseQueryWithReauth,
   endpoints: (builder) => ({}),
-})
+});
